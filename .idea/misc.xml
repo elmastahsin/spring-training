@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/spring-03-Wiring/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-00-Coupling/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-09-MVC-Model/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-10-Thymeleaf/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-04-Autowiring/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-06-Core-BeanScope/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-08-MVC-Controller/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-07-SpringBoot-Demo/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-05-Core-Abstraction/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-11-Data-TableCreation/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-01-Core-IoC-Bean-Annotation/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-02-Core-IoC-Stereotype-Annotation/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_18" default="true" project-jdk-name="18" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
