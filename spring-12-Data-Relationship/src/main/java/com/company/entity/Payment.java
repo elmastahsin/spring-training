@@ -25,6 +25,7 @@ public class Payment {
     private Status paymentStatus;
 
     @OneToOne
+    @JoinColumn(name = "payment_detail_id")
     private PaymentDetail paymentDetail;
 
 
