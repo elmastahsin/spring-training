@@ -1,14 +1,16 @@
 package com.company.entity;
 
 import com.company.enums.UserRole;
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
+
 @Entity
-@Table(name = "account_details")
 @Data
 @NoArgsConstructor
+@Table(name = "account_details")
 public class Account extends BaseEntity {
 
     private String name;
@@ -16,11 +18,10 @@ public class Account extends BaseEntity {
     private String country;
     private String state;
     private String city;
-    private String postalCode;
     private Integer age;
-
+    private String postalCode;
     @Enumerated(EnumType.STRING)
-    private UserRole userRole;
+    private UserRole role;
     @OneToOne(mappedBy = "account")
     private User user;
 }
