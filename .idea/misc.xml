@@ -16,6 +16,9 @@
         <option value="$PROJECT_DIR$/spring-11-Data-TableCreation/pom.xml" />
         <option value="$PROJECT_DIR$/spring-01-Core-IoC-Bean-Annotation/pom.xml" />
         <option value="$PROJECT_DIR$/spring-02-Core-IoC-Stereotype-Annotation/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-12-Data-Relationship/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-Data-CinemaLab/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-13-Data-CinemaLab/pom.xml" />
       </list>
     </option>
   </component>
