@@ -23,6 +23,14 @@ target/
 *.mvn
 target
 HELP.md
+test
+/test-output/
+mvnw
+maven-wrapper.properties
+maven-wrapper.jar
+!**/src/main/**/target/
+
+
 
 
 ### NetBeans ###
@@ -37,3 +45,8 @@ build/
 
 ### VS Code ###
 .vscode/
+/HELP.md
+/mvnw
+/mvnw.cmd
+/target/
+/src/test/
