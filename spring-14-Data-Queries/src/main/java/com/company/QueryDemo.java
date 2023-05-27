@@ -1,6 +1,7 @@
 package com.company;
 
 import com.company.repository.DepartmentRepository;
+import com.company.repository.EmployeeRepository;
 import com.company.repository.RegionRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -10,10 +11,12 @@ public class QueryDemo implements CommandLineRunner {
 
     private  final RegionRepository regionRepository;
     private final DepartmentRepository departmentRepository;
+    private final EmployeeRepository employeeRepository;
 
-    public QueryDemo(RegionRepository regionRepository, DepartmentRepository departmentRepository) {
+    public QueryDemo(RegionRepository regionRepository, DepartmentRepository departmentRepository, EmployeeRepository employeeRepository) {
         this.regionRepository = regionRepository;
         this.departmentRepository = departmentRepository;
+        this.employeeRepository = employeeRepository;
     }
 
     @Override
@@ -33,5 +36,11 @@ public class QueryDemo implements CommandLineRunner {
         System.out.println("findByDivision:  "+departmentRepository.findByDivision("Health"));
         System.out.println("findByeDivisionEndingWith:  "+departmentRepository.findByDivisionEndingWith("ics"));
         System.out.println("findDistinctTop3ByDivisionContaining:  "+departmentRepository.findDistinctTop3ByDivisionContaining("Hea"));
+
+        System.out.println("---------------Department End-----------------");
+        System.out.println("---------------Employee Start-----------------");
+        System.out.println("findByEmail:  "+employeeRepository.findByEmail("esloleyw@rakuten.co.jp"));
+        System.out.println("findByFirstNameAndLastNameOrEmail:  "+employeeRepository.findByFirstNameAndLastNameOrEmail("Eldon","Sloley","esloleyw@rakuten.co.jp"));
+        System.out.println("findByFirstNameIsNot:  "+employeeRepository.findByFirstNameIsNot("Eldon"));
     }
 }
