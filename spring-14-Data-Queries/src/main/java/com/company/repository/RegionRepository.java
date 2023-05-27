@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
+
 public interface RegionRepository extends JpaRepository<Region, Integer> {
 
     //Display all regions in Canada
@@ -21,6 +22,9 @@ public interface RegionRepository extends JpaRepository<Region, Integer> {
 
     //Display top country Contains 'United' in order
     List<Region> findTopByCountryContainsOrderByRegion(String country);
+
+
+
 
 
 }
