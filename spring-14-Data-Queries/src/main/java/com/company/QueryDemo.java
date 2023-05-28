@@ -1,5 +1,6 @@
 package com.company;
 
+import com.company.repository.CourseRepository;
 import com.company.repository.DepartmentRepository;
 import com.company.repository.EmployeeRepository;
 import com.company.repository.RegionRepository;
@@ -14,12 +15,14 @@ public class QueryDemo implements CommandLineRunner {
     private final RegionRepository regionRepository;
     private final DepartmentRepository departmentRepository;
     private final EmployeeRepository employeeRepository;
+    private final CourseRepository courseRepository;
 
 
-    public QueryDemo(RegionRepository regionRepository, DepartmentRepository departmentRepository, EmployeeRepository employeeRepository) {
+    public QueryDemo(RegionRepository regionRepository, DepartmentRepository departmentRepository, EmployeeRepository employeeRepository, CourseRepository courseRepository) {
         this.regionRepository = regionRepository;
         this.departmentRepository = departmentRepository;
         this.employeeRepository = employeeRepository;
+        this.courseRepository = courseRepository;
     }
 
     @Override
@@ -57,5 +60,9 @@ public class QueryDemo implements CommandLineRunner {
         System.out.println("retrieveEmployeeDetail:  " + employeeRepository.retrieveEmployeeDetail());
         System.out.println("retrieveEmployeeSalary:  " + employeeRepository.retrieveEmployeeSalary());
 
+        System.out.println("---------------Employee End-----------------");
+
+        System.out.println("---------------Course Start-----------------");
+        System.out.println("findByCategory:  " + courseRepository.findByCategory("Java"));
     }
 }
