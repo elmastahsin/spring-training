@@ -15,6 +15,7 @@ public class QueryDemo implements CommandLineRunner {
     private final DepartmentRepository departmentRepository;
     private final EmployeeRepository employeeRepository;
 
+
     public QueryDemo(RegionRepository regionRepository, DepartmentRepository departmentRepository, EmployeeRepository employeeRepository) {
         this.regionRepository = regionRepository;
         this.departmentRepository = departmentRepository;
@@ -52,6 +53,9 @@ public class QueryDemo implements CommandLineRunner {
         System.out.println("findDistinctTop3BySalaryLessThan:  " + employeeRepository.findDistinctTop3BySalaryLessThan(100000));
         System.out.println("findByEmailIsNull:  " + employeeRepository.findByEmailIsNull());
         System.out.println("---------------Employee End-----------------");
+        System.out.println("---------------Employee Start-----------------");
+        System.out.println("retrieveEmployeeDetail:  " + employeeRepository.retrieveEmployeeDetail());
+        System.out.println("retrieveEmployeeSalary:  " + employeeRepository.retrieveEmployeeSalary());
 
     }
 }
