@@ -28,32 +28,43 @@ public interface AccountRepository extends JpaRepository<Account, Long> {
 
     //Write a derived query to list all accounts where the beginning of the address contains the keyword
     List<Account> findAllByAddressStartingWith(String address);
+
     //Write a derived query to sort the list of accounts with age
-    List <Account> findAllByOrderByAgeDesc();
+    List<Account> findAllByOrderByAgeDesc();
 
     // ------------------- JPQL QUERIES ------------------- //
 
     //Write a JPQL query that returns all accounts
 
     @Query("SELECT a FROM Account a")
-    List<Account> fetchAllJPQL();
-
+    List<Account> fetchAllUsingJPQL();
 
     //Write a JPQL query to list all admin accounts
-
+    @Query("SELECT a FROM Account a WHERE a.role = 'ADMIN'")
+    List<Account> fetchAdminUsers();
 
     //Write a JPQL query to sort all accounts with age
+    @Query("SELECT a FROM Account a ORDER BY a.age DESC")
+    List<Account> fetchAllOrderWithAge();
 
 
     // ------------------- Native QUERIES ------------------- //
 
     //Write a native query to read all accounts with an age lower than a specific value
-    // Can be used with @Param("age") too
+    @Query(value = "SELECT * FROM account_details WHERE age < ?1", nativeQuery = true)
+    List<Account> retrieveAllByAgeLowerThan(Integer age); // Can be used with @Param("age") too
 
     //Write a native query to read all accounts that a specific value can be containable in the name, address, country, state, city
-
+    @Query(value = "Select * from account_details ad where name ILIKE concat('%', ?1, '%') " +
+            "OR address ILIKE concat('%', ?1, '%') " +
+            "OR country ILIKE concat('%', ?1, '%') " +
+            "OR ad.state ILIKE concat('%', ?1, '%') OR city ILIKE concat('%', ?1, '%')", nativeQuery = true)
+    List<Account> retrieveAllBySearchCriteria(@Param("pattern") String pattern);
 
     //Write a native query to read all accounts with an age higher than a specific value
+    @Query(value="select * from accout_details where age > ?1", nativeQuery = true)
+    List<Account> retrieveAllByAgeGreaterThan(@Param("age") Integer age);
+
 
 
 }
