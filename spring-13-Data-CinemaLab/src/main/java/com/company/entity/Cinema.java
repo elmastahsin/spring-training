@@ -29,4 +29,5 @@ public class Cinema extends BaseEntity {
                 ", sponsoredName='" + sponsoredName + '\'' +
                 '}';
     }
+
 }

@@ -1,11 +1,10 @@
 package com.company.entity;
 
 import com.company.enums.UserRole;
-import javax.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
+import javax.persistence.*;
 
 @Entity
 @Data

@@ -1,6 +1,5 @@
 package com.company.entity;
 
-
 import com.company.enums.MovieState;
 import com.company.enums.MovieType;
 import lombok.Data;
@@ -29,8 +28,8 @@ public class Movie extends BaseEntity {
     private BigDecimal price;
     @ManyToMany
     @JoinTable(name = "movie_genre_rel",
-            joinColumns = @JoinColumn(name = "movie_id"),
-            inverseJoinColumns = @JoinColumn(name = "genre_id"))
+    joinColumns = @JoinColumn(name = "movie_id"),
+    inverseJoinColumns = @JoinColumn(name = "genre_id"))
     private List<Genre> genreList;
 
 
