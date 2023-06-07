@@ -1,14 +1,13 @@
 package com.company.entity;
 
 import com.company.enums.UserRole;
-import javax.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
+import javax.persistence.*;
 
 @Entity
-@Data // Getter Setter ToString
+@Data
 @NoArgsConstructor
 @Table(name = "account_details")
 public class Account extends BaseEntity {
@@ -24,7 +23,4 @@ public class Account extends BaseEntity {
     private UserRole role;
     @OneToOne(mappedBy = "account")
     private User user;
-
-
-
 }
