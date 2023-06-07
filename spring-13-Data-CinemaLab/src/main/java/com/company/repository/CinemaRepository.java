@@ -26,30 +26,33 @@ public interface CinemaRepository extends JpaRepository<Cinema, Long> {
     //Write a derived query to list all cinemas with a specific name or sponsored name
     List<Cinema> findAllByNameOrSponsoredName(String name, String sponsoredName);
 
+
     // ------------------- JPQL QUERIES ------------------- //
 
     //Write a JPQL query to read the cinema name with a specific id
-    @Query("SELECT c.name FROM Cinema c WHERE c.id = ?1")
-    String fetchById(@Param("id") Long id);
+    @Query("SELECT c.name from Cinema c Where c.id = ?1")
+    String fetchCinemaNameById(@Param("id") Long id);
+
 
     // ------------------- Native QUERIES ------------------- //
 
     //Write a native query to read all cinemas by location country
-    @Query(value = "SELECT * FROM cinema c JOIN location l " +
-            "ON l.id = c.location_id WHERE l.country = ?1", nativeQuery = true)
-    List<Cinema> retrieveAllBasedOnLocationCountry(@Param("locationCountry") String locationCountry);
+    @Query(value = "SELECT * FROM cinema c JOIN location l on l.id = c.location_id WHERE l.country = ?1", nativeQuery = true)
+    List<Cinema> retrieveAllByBasedOnLocationCountry(@Param("locationCountry") String locationCountry);
+
 
     //Write a native query to read all cinemas by name or sponsored name contains a specific pattern
-    @Query(value = "SELECT * FROM cinema WHERE name ILIKE concat('%', ?1, '%') " +
-            "OR sponsored_name ILIKE concat('%', ?1, '%')", nativeQuery = true)
-    List<Cinema> retrieveAllByNameOrSponsoredName(@Param("pattern") String pattern);
+    @Query(value = "Select * from cinema c where c.name ILIKE concat('%', ?1, '%') OR c.sponsored_name ILIKE concat('%', ?1, '%')", nativeQuery = true)
+    List<Cinema> retrieveAllByNameOrSponsoredName(String pattern);
+
 
     //Write a native query to sort all cinemas by name
     @Query(value = "SELECT * FROM cinema ORDER BY name", nativeQuery = true)
-    List<Cinema> sortByName();
+    List<Cinema> sortAllByName();
 
     //Write a native query to distinct all cinemas by sponsored name
-    @Query(value = "SELECT DISTINCT sponsored_name FROM cinema", nativeQuery = true)
-    List<String> distinctBySponsoredName();
+    @Query(value = "select distinct sponsored_name from cinema", nativeQuery = true)
+    List<Cinema> distinctAllBySponsoredName();
+
 
 }
