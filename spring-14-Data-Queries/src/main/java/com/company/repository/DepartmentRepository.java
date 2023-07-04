@@ -1,7 +1,6 @@
 package com.company.repository;
 
 import com.company.entity.Department;
-import com.company.entity.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
