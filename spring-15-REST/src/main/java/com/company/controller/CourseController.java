@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController //@Controller + @ResponseBody
-@RequestMapping("/courses/api/v1")
+@RequestMapping("/courses")
 public class CourseController {
 
     private final CourseService courseService;
@@ -49,9 +49,5 @@ public class CourseController {
         courseService.deleteCourseById(courseId);
 
     }
-
-
-
-
 
 }
