@@ -1,6 +1,7 @@
 package com.company.controller;
 
 import com.company.dto.CourseDTO;
+import com.company.dto.ResponseWrapper;
 import com.company.entity.Course;
 import com.company.service.CourseService;
 import org.apache.coyote.Response;
@@ -46,5 +47,18 @@ public class CourseController_ResponseEntity {
                 .status(HttpStatus.CREATED)
                 .header("Operation", "Create")
                 .body(courseService.createCourse(course));
+    }
+    @DeleteMapping("{id}")
+    public ResponseEntity<Void> deleteCourseById(@PathVariable("id") long courseId) {
+        courseService.deleteCourseById(courseId);
+        return ResponseEntity
+                .noContent().build();
+    }
+
+    @PutMapping("{id}")
+    public ResponseEntity<Void> updateCourse(@PathVariable("id") Long courseId, @RequestBody CourseDTO courseDTO) {
+        courseService.updateCourse(courseId, courseDTO);
+        return ResponseEntity
+                .noContent().build();
     }
 }
