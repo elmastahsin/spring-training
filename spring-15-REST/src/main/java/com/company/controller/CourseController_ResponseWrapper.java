@@ -1,13 +1,11 @@
 package com.company.controller;
 
+import com.company.dto.CourseDTO;
 import com.company.dto.ResponseWrapper;
 import com.company.service.CourseService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/courses/api/v3")
@@ -33,4 +31,15 @@ public class CourseController_ResponseWrapper {
                 .ok(new ResponseWrapper("course: "+ courseId + " retrieved", courseService.getCourseById(courseId)));
 
     }
+
+//    @DeleteMapping("{id}")
+//    public ResponseEntity<ResponseWrapper> deleteCourseById(@PathVariable("id") long courseId) {
+//        courseService.deleteCourseById(courseId);
+//        return ResponseEntity
+//                .status(HttpStatus.NO_CONTENT)
+//                .header("Operation", "Delete")
+//                .body(new ResponseWrapper("Successfully deleted"));
+//    }
+
+
 }
