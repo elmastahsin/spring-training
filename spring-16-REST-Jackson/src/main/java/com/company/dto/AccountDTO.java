@@ -9,7 +9,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 //@JsonIgnoreProperties(value = {"address", "country"}, ignoreUnknown = true)
-@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonIgnoreProperties(ignoreUnknown = true) // it is good to use for all dto classes
 public class AccountDTO {
 
     @JsonIgnore
