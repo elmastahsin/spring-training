@@ -1,6 +1,5 @@
 package com.company.controller;
 
-
 import com.company.client.EmployeeClient;
 import com.company.client.UserClient;
 import com.company.dto.ResponseWrapper;
@@ -10,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class Consume_FeignClient {
+
     private final UserClient userClient;
     private final EmployeeClient employeeClient;
 
@@ -18,15 +18,17 @@ public class Consume_FeignClient {
         this.employeeClient = employeeClient;
     }
 
-
     @GetMapping("/api/v1/users")
     public ResponseEntity<ResponseWrapper> getUsers(){
-        return ResponseEntity.ok(new ResponseWrapper("UserList retrieved",userClient.getUsers()));
+
+        return ResponseEntity.ok(new ResponseWrapper("UserList Retrieved",userClient.getUsers()));
     }
 
     @GetMapping("/api/v1/employee")
-    public ResponseEntity<ResponseWrapper> getEmployees(){
-        return ResponseEntity.ok(new ResponseWrapper("EmployeeList retrieved",employeeClient.getEmployees("6298ebfecd0551211fce37a6")));
+    public ResponseEntity<ResponseWrapper> getEmployee(){
+
+        return ResponseEntity.ok(new ResponseWrapper("Employee retrieved",employeeClient.getEmployee("6298ebfecd0551211fce37a6")));
+
     }
 
 
