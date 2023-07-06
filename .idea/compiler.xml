@@ -10,6 +10,7 @@
         <module name="spring-10-Thymeleaf" />
         <module name="spring-13-Data-CinemaLab" />
         <module name="spring-11-Data-TableCreation" />
+        <module name="spring-17-REST-ConsumingApis" />
         <module name="spring-03-Wiring" />
         <module name="spring-16-REST-Jackson" />
         <module name="spring-00-Coupling" />
@@ -47,6 +48,7 @@
       <module name="spring-14-Data-Queries" options="-parameters" />
       <module name="spring-15-REST" options="-parameters" />
       <module name="spring-16-REST-Jackson" options="-parameters" />
+      <module name="spring-17-REST-ConsumingApis" options="-parameters" />
     </option>
   </component>
 </project>
