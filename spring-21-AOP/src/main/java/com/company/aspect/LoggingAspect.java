@@ -2,6 +2,7 @@ package com.company.aspect;
 
 import com.company.dto.CourseDTO;
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -98,5 +99,23 @@ public class LoggingAspect {
 //                , joinPoint.getSignature(), exception.getMessage());
 //    }
 //
+    @Pointcut("@annotation(com.company.annotation.LoggingAnnotation)")
+    private void anyLoggingOperation() {
+    }
+    @Around("anyLoggingOperation()")
+    public Object anyLoggingOperationAdvice(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+        logger.info("Before -> Method : {} ,Parameter : {}"
+                , proceedingJoinPoint.getSignature().toShortString(), proceedingJoinPoint.getArgs());
+        Object result = null;
+        try {
+            result = proceedingJoinPoint.proceed();
+        } catch (Exception ex) {
+            logger.error("Exception : {}", ex.getMessage());
+            throw ex;
+        }
+        logger.info("After -> Method : {} ,Result : {}"
+                , proceedingJoinPoint.getSignature(), result);
+        return result;
+    }
 
 }
