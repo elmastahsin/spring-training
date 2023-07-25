@@ -26,15 +26,58 @@ public class LoggingAspect {
 //    public void log(){
 //        logger.info("Info log ........");
 //    }
+//
+//    @Pointcut("execution(* com.company.repository.CourseRepository.findById(*))")
+//    private void courseRepoFindById() {
+//    }
+//
+//    @Before("courseRepoFindById()")
+//    public void BeforeCourseRepoFindById(JoinPoint joinPoint) {
+//        logger.info("Before -> Method : {} ,Arguments {},Target :{}"
+//                ,joinPoint.getSignature(),joinPoint.getArgs(),joinPoint.getTarget());
+//
+//    }
+//
+//    @Pointcut("within(com.company.controller.*)")
+//    private void anyControllerOperation() {
+//    }
+//    @Pointcut("@within(org.springframework.stereotype.Service)")
+//    private void anyServiceAnnotatedOperation() {
+//    }
+//
+//    @Before("anyControllerOperation() || anyServiceAnnotatedOperation()")
+//    public void beforeControllerOrServiceAdvice(JoinPoint joinPoint) {
+//        logger.info("Before -> Method : {} ,Arguments {},Target :{}"
+//                ,joinPoint.getSignature(),joinPoint.getArgs(),joinPoint.getTarget());
+//
+//    }
+//
+//    @Pointcut("@annotation(org.springframework.web.bind.annotation.DeleteMapping)")
+//    private void anyDeleteMappingOperation() {
+//    }
+//    @Before("anyDeleteMappingOperation()")
+//    public void beforeDeleteMappingAdvice(JoinPoint joinPoint) {
+//        logger.info("Before -> Method : {} ,Arguments {},Target :{}"
+//                ,joinPoint.getSignature(),joinPoint.getArgs(),joinPoint.getTarget());
+//
+//    }
 
-    @Pointcut("execution(* com.company.repository.CourseRepository.findById(*))")
-    private void courseRepoFindById() {
+//    @Pointcut("@annotation(com.company.annotation.LoggingAnnotation)")
+//    private void anyLoggingOperation() {
+//    }
+//    @Before("anyLoggingOperation()")
+//    public void beforeLoggingAdvice(JoinPoint joinPoint) {
+//        logger.info("Before -> Method : {} ,Arguments {},Target :{}"
+//                ,joinPoint.getSignature(),joinPoint.getArgs(),joinPoint.getTarget());
+//
+//    }
+    @Pointcut("@annotation(org.springframework.web.bind.annotation.GetMapping)")
+    private void anyGetMappingOperation() {
     }
-
-    @Before("courseRepoFindById()")
-    public void BeforeCourseRepoFindById(JoinPoint joinPoint) {
-        logger.info("Before -> Method : {} ,Arguments {},Target :{}"
-                ,joinPoint.getSignature(),joinPoint.getArgs(),joinPoint.getTarget());
+    @AfterReturning(pointcut = "anyGetMappingOperation()",returning = "result")
+    public void afterReturningGetMappingAdvice(JoinPoint joinPoint,Object result) {
+        logger.info("AfterReturning -> Method : {} ,Result :{}"
+                ,joinPoint.getSignature(),result);
 
     }
 
