@@ -1,10 +1,13 @@
 package com.company.aspect;
 
+import com.company.dto.CourseDTO;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @Aspect
 @Component
@@ -62,7 +65,7 @@ public class LoggingAspect {
 //
 //    }
 
-//    @Pointcut("@annotation(com.company.annotation.LoggingAnnotation)")
+    //    @Pointcut("@annotation(com.company.annotation.LoggingAnnotation)")
 //    private void anyLoggingOperation() {
 //    }
 //    @Before("anyLoggingOperation()")
@@ -71,17 +74,29 @@ public class LoggingAspect {
 //                ,joinPoint.getSignature(),joinPoint.getArgs(),joinPoint.getTarget());
 //
 //    }
-    @Pointcut("@annotation(org.springframework.web.bind.annotation.GetMapping)")
-    private void anyGetMappingOperation() {
-    }
-    @AfterReturning(pointcut = "anyGetMappingOperation()",returning = "result")
-    public void afterReturningGetMappingAdvice(JoinPoint joinPoint,Object result) {
-        logger.info("AfterReturning -> Method : {} ,Result :{}"
-                ,joinPoint.getSignature(),result);
-
-    }
-
+//    @Pointcut("@annotation(org.springframework.web.bind.annotation.GetMapping)")
+//    private void anyGetMappingOperation() {
+//    }
+//    @AfterReturning(pointcut = "anyGetMappingOperation()",returning = "result")
+//    public void afterReturningGetMappingAdvice(JoinPoint joinPoint,Object result) {
+//        logger.info("AfterReturning -> Method : {} ,Result :{}"
+//                ,joinPoint.getSignature(),result);
+//    }
 
 
+//    @AfterReturning(pointcut = "anyGetMappingOperation()",returning = "results")
+//    public void afterReturningGetMappingAdvice(JoinPoint joinPoint, List<CourseDTO> results) {
+//        logger.info("AfterReturning -> Method : {} ,Result :{}"
+//                ,joinPoint.getSignature(),results.toString());
+//    }
+    // CourseDTO -> Object --> This is ok
+    // List<CourseDTO> -> Object --> This is not ok
+
+//    @AfterThrowing(pointcut = "anyGetMappingOperation()", throwing = "exception")
+//    public void afterThrowingGetMappingAdvice(JoinPoint joinPoint, RuntimeException exception) {
+//        logger.info("AfterThrowing -> Method : {} ,Exception :{}"
+//                , joinPoint.getSignature(), exception.getLocalizedMessage());
+//    }
+//
 
 }
