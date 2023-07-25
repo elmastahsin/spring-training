@@ -95,7 +95,7 @@ public class LoggingAspect {
 //    @AfterThrowing(pointcut = "anyGetMappingOperation()", throwing = "exception")
 //    public void afterThrowingGetMappingAdvice(JoinPoint joinPoint, RuntimeException exception) {
 //        logger.info("AfterThrowing -> Method : {} ,Exception :{}"
-//                , joinPoint.getSignature(), exception.getLocalizedMessage());
+//                , joinPoint.getSignature(), exception.getMessage());
 //    }
 //
 
