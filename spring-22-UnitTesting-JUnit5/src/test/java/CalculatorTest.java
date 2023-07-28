@@ -15,8 +15,18 @@ class CalculatorTest {
         System.out.println("Test Case 1");
         assertEquals("add", Calculator.operator);
         assertTrue(Calculator.operator.equals("add"));
-
-
-
+    }
+    @Test
+    void testCase2() {
+        System.out.println("Test Case 2");
+        assertArrayEquals(new int[]{1,2,3}, new int[]{1,2,3}, "Array Equal Test Failed");
+    }
+    @Test
+    void testCase3() {
+        System.out.println("Test Case 3");
+        String nullString = null;
+        String notNullString = "Company";
+        assertNotNull(notNullString);
+        assertNull(nullString);
     }
 }
