@@ -30,6 +30,7 @@
         <module name="spring-05-Core-Abstraction" />
         <module name="spring-08-MVC-Controller" />
         <module name="spring-20-REST-Security-Keycloak-LicenseApp" />
+        <module name="spring-23-UnitTesting-Mockito" />
         <module name="spring-14-Data-Queries" />
         <module name="spring-04-Autowiring" />
         <module name="spring-07-SpringBoot-Demo" />
@@ -62,6 +63,7 @@
       <module name="spring-20-REST-Security-Keycloak-LicenseApp" options="-parameters" />
       <module name="spring-20-REST-Security-Keycloak-OrganizationsApp" options="-parameters" />
       <module name="spring-21-AOP" options="-parameters" />
+      <module name="spring-23-UnitTesting-Mockito" options="-parameters" />
     </option>
   </component>
 </project>
