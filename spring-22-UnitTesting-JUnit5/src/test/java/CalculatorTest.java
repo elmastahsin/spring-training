@@ -28,10 +28,15 @@ class CalculatorTest {
 
 
     @Test
+    @DisplayName("Add Method")
     void add() {
         System.out.println("Add Method");
         int actual = Calculator.add(2, 3);
         assertEquals(5, actual, "Test Failed");
+    }
+    @Test
+    void testCase0() {
+        fail("Not implemented yet");
     }
 
     @Test
@@ -72,5 +77,7 @@ class CalculatorTest {
 //        assertThrows(AccessDeniedException.class, () -> Calculator.add2(3, 2));
         //assertThrows(IllegalArgumentException.class, () -> Calculator.add2(2, 4), "Test Failed");
     }
+
+
 
 }
