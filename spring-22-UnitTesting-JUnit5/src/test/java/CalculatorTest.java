@@ -1,8 +1,31 @@
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
+
+import java.nio.file.AccessDeniedException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class CalculatorTest {
+
+    @BeforeAll
+    static void setUpAll() {
+        System.out.println("Before All is executed");
+    }
+
+    @AfterAll
+    static void tearDownAll() {
+        System.out.println("After All is executed");
+    }
+
+    @BeforeEach
+    void setUp() {
+        System.out.println("Before Each is executed");
+    }
+
+    @AfterEach
+    void tearDown() {
+        System.out.println("After Each is executed");
+    }
+
 
     @Test
     void add() {
@@ -45,6 +68,9 @@ class CalculatorTest {
     @Test
     void testCase5() {
         System.out.println("Test Case 5");
-        assertThrows(IllegalArgumentException.class, () -> Calculator.add2(3, 2));
+     assertThrows(IllegalArgumentException.class, () -> Calculator.add2(3, 2));
+//        assertThrows(AccessDeniedException.class, () -> Calculator.add2(3, 2));
+        //assertThrows(IllegalArgumentException.class, () -> Calculator.add2(2, 4), "Test Failed");
     }
+
 }
