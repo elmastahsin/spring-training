@@ -41,6 +41,10 @@ class CalculatorTest {
         Calculator c3 = new Calculator();
         assertSame(c1, c2);
         assertNotSame(c1, c3);
-
+    }
+    @Test
+    void testCase5() {
+        System.out.println("Test Case 5");
+        assertThrows(IllegalArgumentException.class, () -> Calculator.add2(3, 2));
     }
 }
