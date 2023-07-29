@@ -4,6 +4,7 @@ import com.company.mapper.UserMapper;
 import com.company.repository.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InOrder;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -37,6 +38,11 @@ class UserServiceImplTest {
         verify(userRepository, atLeast(1)).findByUserNameAndIsDeleted("harold@manager.com", false);
         verify(userRepository, atMostOnce()).findByUserNameAndIsDeleted("harold@manager.com", false);
         verify(userRepository, atMost(1)).findByUserNameAndIsDeleted("harold@manager.com", false);
+
+        InOrder inOrder = inOrder(userRepository,userMapper);
+        inOrder.verify(userRepository).findByUserNameAndIsDeleted("harold@manager.com", false);
+        inOrder.verify(userMapper).convertToDto(null);
+
 
     }
 
