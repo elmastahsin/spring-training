@@ -60,6 +60,6 @@ class TaskServiceImplTest {
         then(taskRepository).should().findById(anyLong());
         then(taskMapper).should(atLeastOnce()).convertToDto(task);
 
-
+    }
 
 }
