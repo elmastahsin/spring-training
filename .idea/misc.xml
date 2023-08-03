@@ -31,6 +31,7 @@
         <option value="$PROJECT_DIR$/spring-21-AOP/pom.xml" />
         <option value="$PROJECT_DIR$/spring-22-UnitTesting-JUnit5/pom.xml" />
         <option value="$PROJECT_DIR$/spring-23-UnitTesting-Mockito/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-24-UnitTesting-MockMVC/pom.xml" />
       </list>
     </option>
   </component>

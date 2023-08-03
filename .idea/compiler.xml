@@ -34,6 +34,7 @@
         <module name="spring-14-Data-Queries" />
         <module name="spring-04-Autowiring" />
         <module name="spring-07-SpringBoot-Demo" />
+        <module name="spring-24-UnitTesting-MockMVC" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -64,6 +65,7 @@
       <module name="spring-20-REST-Security-Keycloak-OrganizationsApp" options="-parameters" />
       <module name="spring-21-AOP" options="-parameters" />
       <module name="spring-23-UnitTesting-Mockito" options="-parameters" />
+      <module name="spring-24-UnitTesting-MockMVC" options="-parameters" />
     </option>
   </component>
 </project>
