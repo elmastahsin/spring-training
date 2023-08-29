@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Mentor Register</title>
+</head>
+<body>
+<!--Display Value of model-->
+<div align="center">
+    <form th:action="@{/mentor/confirm}" method="post" th:object="${mentor}">
+        <label>First Name:</label>
+        <input type="text" th:field="*{firstName}">
+        <br>
+        <label>Last Name:</label>
+        <input type="text" th:field="*{lastName}">
+        <br>
+        <label>Email</label>
+        <input type="email" th:field="*{email}">
+        <br>
+        <label>Graduated</label>
+        <input type="checkbox" th:field="*{graduated}">
+        <br>
+        <label>Gender</label>
+        <input type="radio" value="Male" th:field="*{gender}">Male
+        <input type="radio" value="Female" th:field="*{gender}">Female <br>
+        <label>Group Number</label>
+        <select th:field="*{group}">
+            <option th:each= "group: ${groupList}"  th:value="${group}" th:text="${group}"></option>
+        </select>
+        <br>
+        <label>University</label>
+        <textarea th:field="*{university}"></textarea>
+        <br>
+        <button type="submit">Register</button>
+    </form>
+</div>
+
+</body>
+</html>
