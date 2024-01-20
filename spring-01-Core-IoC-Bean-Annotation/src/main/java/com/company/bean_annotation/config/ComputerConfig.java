@@ -19,11 +19,11 @@ public class ComputerConfig {
 
         return new SonyMonitor("25 inch Beast", "Acer", 25); //Monitor abc = new SonyMonitor;
     }
-    @Bean(name = "sony2")
-    public Monitor monitorSony2() {
-
-        return new SonyMonitor("40 inch Beast", "Acer", 25); //Monitor abc = new SonyMonitor;
-    }
+//    @Bean(name = "sony2")
+//    public Monitor monitorSony2() {
+//
+//        return new SonyMonitor("40 inch Beast", "Acer", 25); //Monitor abc = new SonyMonitor;
+//    }
     @Bean(name = "acer")
     @Primary
     public Monitor monitorAcer() {

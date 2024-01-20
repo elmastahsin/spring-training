@@ -4,6 +4,7 @@ import com.company.bean_annotation.casefactory.Case;
 import com.company.bean_annotation.casefactory.DellCase;
 import com.company.bean_annotation.config.ComputerConfig;
 import com.company.bean_annotation.config.RandomConfig;
+import com.company.bean_annotation.config.TaskConfig;
 import com.company.bean_annotation.monitorfactory.Monitor;
 import com.company.bean_annotation.monitorfactory.SonyMonitor;
 import com.company.bean_annotation.motherboardfactory.AsusMotherboard;
@@ -17,7 +18,7 @@ public class ComputerTest {
 
         System.out.println("Creating container");
         // Creating Container by using Application Context
-        AnnotationConfigApplicationContext container = new AnnotationConfigApplicationContext(ComputerConfig.class, RandomConfig.class);
+        AnnotationConfigApplicationContext container = new AnnotationConfigApplicationContext(ComputerConfig.class, TaskConfig.class,RandomConfig.class);
 
 
         // Creating container by using BeanFactory
@@ -57,5 +58,15 @@ public class ComputerTest {
         Motherboard theMotherBoard = container.getBean(Motherboard.class);
         PC myPc2 = new PC(theCase, theMonitor2, theMotherBoard);
         myPc2.powerUp();
+
+
+
+        System.out.println("***********Task Objects***********");
+
+        String string = container.getBean(String.class);
+        Integer integer = container.getBean(Integer.class);
+        System.out.println(string);
+        System.out.println(integer);
+
     }
 }
