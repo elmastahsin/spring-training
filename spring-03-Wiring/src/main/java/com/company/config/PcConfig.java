@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class PcConfig {
+public class  PcConfig {
     @Bean
     public Dimensions dimensions() {
         return new Dimensions(50, 12, 21);
