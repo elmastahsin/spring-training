@@ -13,6 +13,7 @@
         <module name="spring-01-Core-IoC-Bean-Annotation" />
         <module name="spring-21-AOP" />
         <module name="spring-22-UnitTesting-JUnit5" />
+        <module name="spring-05-Core-Abstraction-v1" />
         <module name="spring-09-MVC-Model" />
         <module name="Spring-15-REST" />
         <module name="Spring-19-REST-OpenAPI3" />

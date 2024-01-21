@@ -14,12 +14,17 @@ public class CommentApplication {
         comment.setAuthor("Mike");
         comment.setComment("Spring FrameWork");
 
+        Comment comment1 = new Comment();
+        comment1.setAuthor("Tyson");
+        comment1.setComment("Comment Application works properly");
         ApplicationContext context = new AnnotationConfigApplicationContext(CommentConfig.class);
 
 
         CommentService commentService = context.getBean(CommentService.class);
 
         commentService.publishComment(comment);
+
+        commentService.publishComment(comment1);
 
     }
 }
