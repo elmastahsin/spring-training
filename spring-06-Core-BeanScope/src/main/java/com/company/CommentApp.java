@@ -14,11 +14,11 @@ public class CommentApp {
         comment.setText("Spring Framework");
 
 
-        ApplicationContext context = new AnnotationConfigApplicationContext(CommentConfig.class);
+        ApplicationContext container = new AnnotationConfigApplicationContext(CommentConfig.class);
 
 
-        CommentService cs1 = context.getBean(CommentService.class);
-        CommentService cs2 = context.getBean(CommentService.class);
+        CommentService cs1 = container.getBean(CommentService.class);
+        CommentService cs2 = container.getBean(CommentService.class);
 
         System.out.println(cs1);
         System.out.println(cs2);
