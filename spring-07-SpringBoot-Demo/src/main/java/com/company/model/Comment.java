@@ -7,6 +7,6 @@ import lombok.Data;
 public class Comment {
 
     private String author;
-    private String text;
+    private String comment;
 
 }

@@ -12,7 +12,7 @@ public class METUApplication {
     public static void main(String[] args) {
         Comment comment = new Comment();
         comment.setAuthor("Mike");
-        comment.setText("Spring FrameWork");
+        comment.setComment("Spring FrameWork");
 
         ApplicationContext container = SpringApplication.run(METUApplication.class, args);
 
