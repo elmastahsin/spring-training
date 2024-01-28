@@ -13,7 +13,7 @@ public class StudentController {
     @GetMapping("/register")
     public String register(Model model){
 
-        model.addAttribute("students", DataGenerator.createPerson());
+        model.addAttribute("students", DataGenerator.createPerson(10));
 
 
 
