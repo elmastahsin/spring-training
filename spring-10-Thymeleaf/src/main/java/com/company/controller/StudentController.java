@@ -27,4 +27,10 @@ public class StudentController {
 
         return "student/welcome";
     }
+    @GetMapping("/student-list")
+    public String studentList(Model model) {
+
+        model.addAttribute("students", DataGenerator.createPerson(10));
+        return "student/student-list";
+    }
 }

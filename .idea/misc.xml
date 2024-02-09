@@ -34,6 +34,7 @@
         <option value="$PROJECT_DIR$/spring-24-UnitTesting-MockMVC/pom.xml" />
         <option value="$PROJECT_DIR$/spring-25-Docker/pom.xml" />
         <option value="$PROJECT_DIR$/spring-05-Core-Abstraction-v1/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-26-jwt/pom.xml" />
       </list>
     </option>
     <option name="workspaceImportForciblyTurnedOn" value="true" />

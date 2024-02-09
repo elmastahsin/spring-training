@@ -1,4 +1,4 @@
-package com.company.dto;
+  package com.company.dto;
 
 import com.company.enums.UserRole;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
